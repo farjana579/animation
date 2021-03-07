@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{height: 100%;}
+        body{
+        height: 100%;
+        margin: 0;
+        padding: 0;  
+        background-color:  rgb(252, 238, 220);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .dragon{
+            width: 200px;
+            height: 140px;
+            transform-origin: 50% 80%;
+        animation: zoomin .5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
+        }
+        @keyframes  zoomin {
+            100%{
+                transform: scale(1.16,1.16);
+            }
+        }
+    .dragon .body{
+        position: absolute;
+        width: 188px;
+        height: 128px;
+        top: 0;
+       background: no-repeat center center;
+       background-size: contain;
+       z-index: 10;
+    }
+     .dragon .horn-left{
+    position: absolute;
+    top:-48px;
+    height: 31px;
+    width: 31px;
+    left:14px;
+    background-size: contain;
+    z-index: 9;
+    transform-origin: 150% 200%;
+    transform: rotate(-5deg);
+    animation: swingleft 0.5s cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
+    }
+    @keyframes swingleft  {
+    100%{
+transform: rotate(5deg);
+    }
+    }
+    .dragon .horn-right{
+        position: absolute;
+        width: 34px;
+        height: 31px;
+        top: -17px;
+        left: 120px;
+        background-size: contain;
+        transform-origin: -50% 200%;
+        transform:rotate(2deg);
+        z-index: 9;
+        animation: swingright .5sec cubic-bezier(0.47, 0, 0.75, 0.72) infinite alternate;
+    }
+    @keyframes swingright  {
+        100%{
+            transform: rotate(-2deg);
+        }
+    }
+    .dragon .blush{
+        position: absolute;
+        top: 46px;
+        width: 15px;
+        height: 9px;
+        background: url(./img/blush.png) no-repeat;
+        background-size: 100% 100%;
+        z-index: 11;
+        animation: blush .5s ease infinite alternate;
+    } 
+    .dragon .blush.left {
+        left: 43px;
+    }
+
+    .dragon .blush.right {
+        left: 120px;
+    }
+    @keyframes blush {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="dragon">
+        <div class="body"><img src="img/body.png" alt="">
+            <div class="horn-left"><img src="img/horn-left.png" alt="">
+                <div class="horn-right"> <img src="img/horn-right.png" alt="">
+                    <div class="eye"> 
+                    <div class="eye-left">  
+                        <div class="eye-right">  
+                            <div class="mouth">
+                                <div class="blush"> 
+                                <div class="blush-left">
+                                    <div class="blush-right">
+                                    </div>
+                                        <div class="tail-sting"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</body>
+</html>
